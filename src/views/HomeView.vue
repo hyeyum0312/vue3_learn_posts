@@ -13,7 +13,7 @@ console.log("route", route.path);
 const router = useRouter();
 
 function goAboutPage() {
-  router.push("/about");
+  router.push({ name: "About" });
 }
 </script>
 

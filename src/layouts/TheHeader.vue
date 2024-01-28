@@ -21,33 +21,38 @@
                 RouterLink- 페이지 이동시 <RouterLink>를 사용하여 다른페이지 링크를 만들어야한다.
                 리로딩하지 않고 URL에 매핑된페이지를 렌더링할 수 있다.
                -->
-              <routerLink class="nav-link active" active-class="active" to="/"
-                >Home</routerLink
-              >
+              <routerLink class="nav-link active" active-class="active" to="/">
+                Home
+              </routerLink>
             </li>
             <li class="nav-item">
-              <routerLink class="nav-link" active-class="active" to="/About"
-                >About</routerLink
-              >
+              <routerLink class="nav-link" active-class="active" to="/About">
+                About
+              </routerLink>
+            </li>
+            <li class="nav-item">
+              <routerLink class="nav-link" active-class="active" to="/posts">
+                게시글
+              </routerLink>
             </li>
           </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+          <div class="d-flex">
+            <button class="btn btn-outline-light" type="button" @click="goPage">
+              글쓰기
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </nav>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+const goPage = () => {
+  router.push({ name: "PostCreate" });
+};
+</script>
 
 <style lang="scss" scoped></style>
