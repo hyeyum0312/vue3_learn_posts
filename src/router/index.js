@@ -5,6 +5,7 @@ import PostCreateViewVue from "@/posts/PostCreateView.vue";
 import PostDetailViewVue from "@/posts/PostDetailView.vue";
 import PostEditViewVue from "@/posts/PostEditView.vue";
 import PostListViewVue from "@/posts/PostListView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
 
 const routes = [
   {
@@ -41,6 +42,7 @@ const routes = [
     name: "PostEdit",
     component: PostEditViewVue,
   },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFoundView },
 ];
 
 const router = createRouter({
