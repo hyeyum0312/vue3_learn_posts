@@ -35,6 +35,11 @@
                 게시글
               </routerLink>
             </li>
+            <li class="nav-item">
+              <routerLink class="nav-link" active-class="active" to="/nested">
+                Nested
+              </routerLink>
+            </li>
           </ul>
           <div class="d-flex">
             <button class="btn btn-outline-light" type="button" @click="goPage">
