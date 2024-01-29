@@ -31,8 +31,8 @@ const fetchPosts = () => {
 console.log("posts", posts);
 fetchPosts();
 
+// eslint-disable-next-line prettier/prettier
 const goPage = (id) => {
-  console.log("id", id);
   //   router.push(`/posts/${id}`);
   //문자 뿐만아니라 라우터 객체도 입력할 수 있다.
   router.push({

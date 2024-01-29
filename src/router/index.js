@@ -24,6 +24,7 @@ const routes = [
   },
   {
     path: "/posts/create",
+    name: "PostCreate",
     component: PostCreateViewVue,
   },
   // /user/alice
