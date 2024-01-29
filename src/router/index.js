@@ -26,6 +26,7 @@ const routes = [
     path: "/posts",
     name: "PostList",
     component: PostListViewVue,
+    props: true,
   },
   {
     path: "/posts/create",
@@ -39,6 +40,10 @@ const routes = [
     path: "/posts/:id",
     name: "PostDetail",
     component: PostDetailViewVue,
+    // eslint-disable-next-line prettier/prettier
+    props: (route) => {
+      parseInt(route.params.id);
+    },
   },
 
   {

@@ -13,12 +13,18 @@
         </PostItem>
       </div>
     </div>
+    <hr class="my-4" />
+    <AppCard>
+      <PostDetailView :id="1"></PostDetailView>
+    </AppCard>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import PostItem from "@/components/posts/PostItem.vue";
+import PostDetailView from "./PostDetailView.vue";
+import AppCard from "@/components/AppCard.vue";
+import { ref } from "vue";
 import { getPosts } from "@/api/posts";
 import { useRouter } from "vue-router";
 
@@ -28,7 +34,6 @@ const posts = ref([]);
 const fetchPosts = () => {
   posts.value = getPosts();
 };
-console.log("posts", posts);
 fetchPosts();
 
 // eslint-disable-next-line prettier/prettier
@@ -38,12 +43,12 @@ const goPage = (id) => {
   router.push({
     name: "PostDetail",
     params: {
-      id,
+      id: id,
     },
-    query: {
-      searchText: "hello",
-    },
-    hash: "#world",
+    // query: {
+    //   searchText: "hello",
+    // },
+    // hash: "#world",
   });
 
   //문자열, 객체, 이름지정해서 이동 가능하다 , 쿼리나 해시도 객체 파라미터로 넣을 수 있음

@@ -1,5 +1,16 @@
 <template>
-  <div class="card">
+  <AppCard>
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">
+      {{ content }}
+    </p>
+    <span>
+      {{ createdAt }}
+    </span>
+    <!-- <a href="#" class="btn btn-primary">{{ createdAt }}</a> -->
+  </AppCard>
+
+  <!-- <div class="card">
     <div class="card-body">
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">
@@ -8,12 +19,13 @@
       <span>
         {{ createdAt }}
       </span>
-      <!-- <a href="#" class="btn btn-primary">{{ createdAt }}</a> -->
+      <a href="#" class="btn btn-primary">{{ createdAt }}</a>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
+import AppCard from "../AppCard.vue";
 defineProps({
   title: {
     type: String,
