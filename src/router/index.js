@@ -42,7 +42,7 @@ const routes = [
     component: PostDetailViewVue,
     // eslint-disable-next-line prettier/prettier
     props: (route) => {
-      parseInt(route.params.id);
+      return { id: parseInt(route.params.id) };
     },
   },
 

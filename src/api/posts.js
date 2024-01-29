@@ -11,9 +11,8 @@ export function getPosts() {
 }
 
 export function getPostById(id) {
-  console.log("id", id);
+  console.log("id >>>>", id);
   const numberId = parseInt(id);
-  console.log("numberId", numberId);
   // eslint-disable-next-line prettier/prettier
   return posts.find((item) => item.id === numberId);
 }

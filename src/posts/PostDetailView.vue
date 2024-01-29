@@ -37,8 +37,9 @@ import { useRouter } from "vue-router";
 import { getPostById } from "@/api/posts";
 
 const props = defineProps({
-  id: String,
+  id: Number,
 });
+console.log("props", props);
 const router = useRouter();
 const form = ref({});
 
