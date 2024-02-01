@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  // createWebHistory,
+} from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import PostCreateViewVue from "@/posts/PostCreateView.vue";
@@ -19,7 +23,7 @@ const routes = [
   },
   {
     path: "/about",
-    name: "ABOUT",
+    name: "About",
     component: AboutView,
   },
   {
@@ -35,7 +39,6 @@ const routes = [
   },
   // /user/alice
   // /user/hyeyeon ->PostDetailViewVue // 같은 컴포넌트 호출 시 , /user/:id와같이 사용가능., /user/:userId 이름은 맘대로
-  // /user/taeha
   {
     path: "/posts/:id",
     name: "PostDetail",
@@ -77,7 +80,8 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/"),
+  // history: createWebHistory("/"),
+  history: createWebHashHistory("/"),
   routes,
 });
 

@@ -1,3 +1,4 @@
+import axios from "axios";
 const posts = [
   { id: 1, title: "제목1", content: "2024-01-01" },
   { id: 2, title: "제목2", content: "2024-01-02" },
@@ -11,8 +12,18 @@ export function getPosts() {
 }
 
 export function getPostById(id) {
-  console.log("id >>>>", id);
   const numberId = parseInt(id);
-  // eslint-disable-next-line prettier/prettier
-  return posts.find((item) => item.id === numberId);
+  return axios.get(`http://localhost:5000/posts/${numberId}`);
+}
+
+export function createPost(data) {
+  return axios.get("http://localhost:5000/posts");
+}
+
+export function updatePost(id, data) {
+  return axios.post(`http://localhost:5000/posts/${id}`, data);
+}
+
+export function deletePost(id) {
+  return axios.delete(`http://localhost:5000/posts/${id}`);
 }
