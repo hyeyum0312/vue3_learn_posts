@@ -31,9 +31,27 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const posts = ref([]);
 
-const fetchPosts = () => {
-  posts.value = getPosts();
+const fetchPosts = async () => {
+  try {
+    const { data } = await getPosts();
+    posts.value = data;
+  } catch (error) {
+    console.error(error);
+  }
+
+  // async/await
+  // ({ data: posts.value } = await getPosts());
+
+  // promise방식
+  // getPosts().then((response) => {
+  //   console.log("response", response);
+  //   posts.value = response.data;
+  // });
+
+  // async/await과 promise의 차이
+  // async/await은 기능은 같으나 문법적 추가, 좀더 읽기 쉽게.
 };
+
 fetchPosts();
 
 // eslint-disable-next-line prettier/prettier
