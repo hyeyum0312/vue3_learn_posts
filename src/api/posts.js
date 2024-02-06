@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export function getPosts(params) {
+  console.log("params", params);
   return axios.get("http://localhost:5000/posts", { params });
 }
 
