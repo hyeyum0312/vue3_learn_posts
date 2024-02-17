@@ -40,7 +40,7 @@ const router = useRouter();
 const post = ref({});
 
 const props = defineProps({
-  id: Number,
+  id: String,
 });
 
 const fetchPost = async () => {

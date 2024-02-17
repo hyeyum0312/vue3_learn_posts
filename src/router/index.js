@@ -43,10 +43,11 @@ const routes = [
     path: "/posts/:id",
     name: "PostDetail",
     component: PostDetailViewVue,
+    props: true,
     // eslint-disable-next-line prettier/prettier
-    props: (route) => {
-      return { id: parseInt(route.params.id) };
-    },
+    // props: (route) => {
+    //   return { id: parseInt(route.params.id) };
+    // },
   },
 
   {
